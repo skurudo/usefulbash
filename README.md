@@ -1,2 +1,2 @@
-# usefulbash
-Useful bash-scripts
+# useful bash
+Useful bash-scripts and something like this
