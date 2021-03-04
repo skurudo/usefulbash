@@ -1,0 +1,2 @@
+# usefulbash
+Useful bash-scripts
