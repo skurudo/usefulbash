@@ -11,7 +11,7 @@ employees='./usrlist'
 # link about our apps - список ваших приложений
 # https://oauth.yandex.ru/
 # get token from apps id - получить токен из ID приложения
-# https://oauth.yandex.ru/verification_code#access_token=435843755894374389
+# https://oauth.yandex.ru/verification_code#access_token=425843455894374389
 TOKEN="token-here-and-there"
 
 # read and trim user file - читаем и перебираем файл со списком пользователей
