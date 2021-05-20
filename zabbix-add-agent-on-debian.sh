@@ -12,7 +12,7 @@ read SRV_HOSTNAME
 
 # if SRV_HOSTNAME is empty, try again
 if [ -z "$SRV_HOSTNAME" ]; then
-        SRV_HOSTNAM=$(hostname -f)
+        SRV_HOSTNAME=$(hostname -f)
 fi
 
 
