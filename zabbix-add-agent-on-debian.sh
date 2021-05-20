@@ -1,0 +1,63 @@
+#!/bin/bash
+#
+# YASZAIT
+# Yet Another Simple Zabbix Agent Installer Tool
+#
+###############################################################
+
+
+# enter some data to start
+echo -n "This server name: "
+read SRV_HOSTNAME
+echo -n "Main Zabbix Server: "
+read ZABBIX_SERVER
+echo -n "Listening port (10050): "
+read LISTEN_PORT
+
+
+# if SRV_HOSTNAME is empty, try again
+if [ -z "$SRV_HOSTNAME" ]; then
+        echo -n "==> Please input the hostname of your server... [myserver]: "
+        read -r SRV_HOSTNAME
+fi
+
+# if ZABBIX_SERVER is empty, try again
+if [ -z "$ZABBIX_SERVER" ]; then
+    echo -n "==> Please input the servername of your Zabbix server... [example.myzabbix.org or IP]: "
+        read -r ZABBIX_SERVER
+fi
+
+# if LISTEN_PORT is empty, set it to 10050
+if [ -z "$LISTEN_PORT" ]; then
+    LISTEN_PORT=10050
+fi
+
+# Zabbix agent simple installation
+apt-get install zabbix-agent
+
+# change configuration file
+cat > /etc/zabbix/zabbix_agentd.conf << EOF
+# simple core config file
+# address 
+Server=$ZABBIX_SERVER
+ServerActive=$ZABBIX_SERVER
+#
+ListenPort=$LISTEN_PORT
+# manual hostname or auto hostname
+Hostname=$SRV_HOSTNAME
+#Hostname=$(hostname -f)
+# pid and logs
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix-agent/zabbix_agentd.log
+LogFileSize=0
+EOF
+
+# restart the zabbix agent
+service zabbix-agent restart  >/dev/null 2>&1
+
+# check agent status
+service zabbix-agent status
+
+# show a little ip4 addresses for Zabbix server
+echo "Server ipv4 addresses:"
+ip addr show | grep "inet "
