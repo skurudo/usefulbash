@@ -12,8 +12,7 @@ read SRV_HOSTNAME
 
 # if SRV_HOSTNAME is empty, try again
 if [ -z "$SRV_HOSTNAME" ]; then
-        echo -n "==> Please input the hostname of your server... [myserver]: "
-        read -r SRV_HOSTNAME
+        SRV_HOSTNAM=$(hostname -f)
 fi
 
 
@@ -40,12 +39,12 @@ apt-get install zabbix-agent
 # change configuration file
 cat > /etc/zabbix/zabbix_agentd.conf << EOF
 # simple core config file
-# address 
+# address of the server
 Server=$ZABBIX_SERVER
 ServerActive=$ZABBIX_SERVER
-#
+# port for Zabbix
 ListenPort=$LISTEN_PORT
-# manual hostname or auto hostname
+# hostname 
 Hostname=$SRV_HOSTNAME
 #Hostname=$(hostname -f)
 # pid and logs
