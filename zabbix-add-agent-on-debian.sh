@@ -9,11 +9,6 @@
 # enter some data to start
 echo -n "This server name: "
 read SRV_HOSTNAME
-echo -n "Main Zabbix Server: "
-read ZABBIX_SERVER
-echo -n "Listening port (10050): "
-read LISTEN_PORT
-
 
 # if SRV_HOSTNAME is empty, try again
 if [ -z "$SRV_HOSTNAME" ]; then
@@ -21,11 +16,18 @@ if [ -z "$SRV_HOSTNAME" ]; then
         read -r SRV_HOSTNAME
 fi
 
+
+echo -n "Main Zabbix Server: "
+read ZABBIX_SERVER
+
 # if ZABBIX_SERVER is empty, try again
 if [ -z "$ZABBIX_SERVER" ]; then
     echo -n "==> Please input the servername of your Zabbix server... [example.myzabbix.org or IP]: "
         read -r ZABBIX_SERVER
 fi
+
+echo -n "Listening port (10050): "
+read LISTEN_PORT
 
 # if LISTEN_PORT is empty, set it to 10050
 if [ -z "$LISTEN_PORT" ]; then
@@ -53,7 +55,7 @@ LogFileSize=0
 EOF
 
 # restart the zabbix agent
-service zabbix-agent restart  >/dev/null 2>&1
+service zabbix-agent restart 
 
 # check agent status
 service zabbix-agent status
