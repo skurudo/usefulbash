@@ -3,7 +3,7 @@ Useful bash-scripts and something like this
 
 ## Zabbix
 ### YASZAIT - Zabbix-Agent Installer
-Yet Another Simple Zabbix Agent Installer Tool for Debian - [zabbix-add-agent-on-debian.sh] (https://github.com/skurudo/usefulbash/blob/main/zabbix-add-agent-on-debian.sh)
+Yet Another Simple Zabbix Agent Installer Tool for Debian - [zabbix-add-agent-on-debian.sh](https://github.com/skurudo/usefulbash/blob/main/zabbix-add-agent-on-debian.sh)
 
 ## Yandex API
 ### Yandex.Connect - AddUsers
