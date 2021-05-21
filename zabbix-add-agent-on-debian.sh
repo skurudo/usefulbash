@@ -7,21 +7,21 @@
 
 
 # enter some data to start
-echo -n "This server name: "
+echo -n "Enter this server name: "
 read SRV_HOSTNAME
 
-# if SRV_HOSTNAME is empty, try again
+# if SRV_HOSTNAME is empty, use server hostname
 if [ -z "$SRV_HOSTNAME" ]; then
-        SRV_HOSTNAME=$(hostname -f)
+        SRV_HOSTNAME=($(hostname -f))
 fi
 
 
-echo -n "Main Zabbix Server: "
+echo -n "Enter Zabbix Server (FQDN or IP): "
 read ZABBIX_SERVER
 
 # if ZABBIX_SERVER is empty, try again
 if [ -z "$ZABBIX_SERVER" ]; then
-    echo -n "==> Please input the servername of your Zabbix server... [example.myzabbix.org or IP]: "
+    echo -n "==> Please input address of your Zabbix server... [example.myzabbix.org or IP]: "
         read -r ZABBIX_SERVER
 fi
 
@@ -39,6 +39,7 @@ apt-get install zabbix-agent
 # change configuration file
 cat > /etc/zabbix/zabbix_agentd.conf << EOF
 # simple core config file
+#
 # address of the server
 Server=$ZABBIX_SERVER
 ServerActive=$ZABBIX_SERVER
@@ -60,5 +61,8 @@ service zabbix-agent restart
 service zabbix-agent status
 
 # show a little ip4 addresses for Zabbix server
+echo "######################################"
+echo "# Information about IP addresses #####"
+echo "######################################"
 echo "Server ipv4 addresses:"
 ip addr show | grep "inet "
