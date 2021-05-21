@@ -21,7 +21,7 @@ read ZABBIX_SERVER
 
 # if ZABBIX_SERVER is empty, try again
 if [ -z "$ZABBIX_SERVER" ]; then
-    echo -n "==> Please input address of your Zabbix server... [example.myzabbix.org or IP]: "
+    echo -n "=> Please enter address of your Zabbix server... [example.org or IP]: "
         read -r ZABBIX_SERVER
 fi
 
