@@ -1,0 +1,13 @@
+gitlab:
+  access:
+    gitlab_url: "https://your-url"
+    token: "sometoken"
+  projects:
+    - repo/somerepo
+
+backup:
+  destination: "some-directory"
+  project_dirs: True
+  backup_name: "gitlab-{PROJECT_NAME}-{TIME}.tar.gz"
+  backup_time_format: "%Y%m%d"
+  retention_period: 3
