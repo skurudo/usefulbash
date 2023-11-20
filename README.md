@@ -3,7 +3,7 @@ Useful bash-scripts and something like this
 
 ## Gitlab
 ### Gitlab - export plus list maker
-Export from Gitlab plus projects list maker - [scripts](/gitlab-export-import/)
+Export from Gitlab plus projects list maker - [scripts](/gitlab-export-import/readme.md)
 
 ## Zabbix
 ### YASZAIT - Zabbix-Agent Installer
