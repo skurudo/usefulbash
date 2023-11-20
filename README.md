@@ -2,9 +2,8 @@
 Useful bash-scripts and something like this
 
 ## Gitlab
-### Gitlab - export/import plus list maker
-[Gitlab - export/import plus list maker](/gitlab-export-import/)
-
+### Gitlab - export plus list maker
+Export from Gitlab plus projects list maker - [scripts](/gitlab-export-import/)
 
 ## Zabbix
 ### YASZAIT - Zabbix-Agent Installer

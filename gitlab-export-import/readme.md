@@ -2,7 +2,7 @@
 Useful bash-scripts and something like this
 
 ## Gitlab
-### Gitlab - export/import plus list maker
+### Gitlab - export plus list maker
 
 [start2.sh](start2.sh) -- запускает вереницу событий: на выходе список и сразу экспорт файлов
 [start.sh](start.sh) -- при наличии готового списка запускается экспорт
