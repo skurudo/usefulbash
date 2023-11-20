@@ -1,4 +1,7 @@
 #!/bin/bash
+# 
+# Thanks to Jess Chen - https://stackoverflow.com/a/72059829/22926674
+#
 GL_DOMAIN="https://your-url"
 GL_TOKEN="sometoken"
 for ((i=1; ; i+=1)); do
