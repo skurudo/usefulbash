@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# Yandex Connect mass user add
+#
+###############################################################
+#
 # path to users list - путь к списку пользователей
 employees='./usrlist'
 # line example from users list - пример строки файла 
