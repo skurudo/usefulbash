@@ -5,9 +5,9 @@ Useful bash-scripts and something like this
 ### Initial softwate install and change 
 
 ### Add user with passwordless sudo and public key
-v1 - Add user with passwordless sudo and public key - (useradd-sudo-key.sh)[useradd-sudo-key.sh]
-v2 - Add user with passwordless sudo and public key - interactive - (useradd-sudo-key-i.sh)[useradd-sudo-key-i.sh]
-v3 - Add user with passwordless sudo and public key - parameters - (useradd-sudo-key-p.sh)[useradd-sudo-key-p.sh]
+* v1 - Add user with passwordless sudo and public key - (useradd-sudo-key.sh)[useradd-sudo-key.sh]
+* v2 - Add user with passwordless sudo and public key - interactive - (useradd-sudo-key-i.sh)[useradd-sudo-key-i.sh]
+* v3 - Add user with passwordless sudo and public key - parameters - (useradd-sudo-key-p.sh)[useradd-sudo-key-p.sh]
 
 ## Gitlab
 ### Gitlab - export plus list maker
