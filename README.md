@@ -3,6 +3,7 @@ Useful bash-scripts and something like this
 
 ## OS
 ### Initial softwate install and change 
+* Selecting and changing the environment - [project-env-select-and-change.sh](project-env-select-and-change.sh)
 
 ### Add user with passwordless sudo and public key
 * v1 - Add user with passwordless sudo and public key - [useradd-sudo-key.sh](useradd-sudo-key.sh)
