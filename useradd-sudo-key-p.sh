@@ -12,6 +12,7 @@ echo "Username - " $USERNAME
 echo "Paste public key - " $PUBLIC_KEY
 echo "............................................" 
 
+apt-get install sudo -y
 sudo adduser --disabled-password --gecos "" $USERNAME
 sudo usermod -aG sudo $USERNAME
 sudo mkdir -p /home/$USERNAME/.ssh && sudo touch /home/$USERNAME/.ssh/authorized_keys
