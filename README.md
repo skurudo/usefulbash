@@ -14,6 +14,10 @@ Useful bash-scripts and something like this
 ### Gitlab - export plus list maker
 Export from Gitlab plus projects list maker - [scripts](/gitlab-export-import/readme.md)
 
+## Oxidized
+### Oxidized - send notification
+Check file and send notification to Telegram - [scripts](/oxidized-check-file-and-send-notify.sh)
+
 ## Zabbix
 ### YASZAIT - Zabbix-Agent Installer
 Yet Another Simple Zabbix Agent Installer Tool for Debian - [zabbix-add-agent-on-debian.sh](https://github.com/skurudo/usefulbash/blob/main/zabbix-add-agent-on-debian.sh)
