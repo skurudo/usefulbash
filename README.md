@@ -11,7 +11,10 @@ Useful bash-scripts and something like this
 * v3 - Add user with passwordless sudo and public key - parameters - [useradd-sudo-key-p.sh](useradd-sudo-key-p.sh)
 
 ## Gitlab
-### Gitlab - export plus list maker
+### Gitlab - export plus list maker (new version)
+Export from Gitlab plus projects list maker - [scripts](/gitlab-export-import-v2/readme.md)
+
+### Gitlab - export plus list maker (old version)
 Export from Gitlab plus projects list maker - [scripts](/gitlab-export-import/readme.md)
 
 ## Oxidized
