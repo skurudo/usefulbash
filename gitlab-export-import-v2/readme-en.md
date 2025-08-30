@@ -2,16 +2,16 @@
 
 ### Overview
 
-This bash script automates the export of all GitLab projects using the `gitlab-project-export` tool by rvojcik. The script fetches all projects from a GitLab instance, creates a configuration file, and exports each project to a separate archive file.
+This bash script automates the export of all GitLab projects using the `gitlab-project-export` tool by rvojcik. The script retrieves all projects from a GitLab instance, creates a configuration file, and exports each project to a separate archive.
 
 ### Features
 
 - **Automatic project discovery**: Retrieves all projects via GitLab API
 - **Individual archives**: Each project is exported to a separate `.tar.gz` file
 - **No manual intervention**: Fully automated process without interactive prompts
-- **Comprehensive logging**: Detailed logs of the export process
-- **Error handling**: Robust error detection and reporting
-- **Dependency checking**: Verifies all required tools are installed
+- **Detailed logging**: Comprehensive logs of the export process
+- **Error handling**: Reliable error detection and reporting
+- **Dependency checking**: Verifies installation of all required tools
 
 ### Prerequisites
 
@@ -40,14 +40,14 @@ pip install -r requirements.txt
 
 #### GitLab Access Token
 
-Create a personal access token in GitLab with the following scopes:
+Create a personal access token in GitLab with the following permissions:
 - `api`
 - `read_user`
 - `read_repository`
 
 **Token creation steps:**
 1. Go to GitLab → User Settings → Access Tokens
-2. Create new token with required scopes
+2. Create a new token with required permissions
 3. Copy the generated token
 
 ### Configuration
@@ -61,14 +61,14 @@ chmod +x gitlab_export.sh
 
 2. **Edit the script** and replace the token:
 ```bash
-# Open the script in editor
+# Open the script in an editor
 nano gitlab_export.sh
 
 # Find this line and replace with your token:
 GITLAB_TOKEN="YOUR_GITLAB_TOKEN_HERE"
 ```
 
-3. **Update GitLab URL** if using a custom instance:
+3. **Update GitLab URL** if using your own instance:
 ```bash
 GITLAB_URL="https://your-gitlab-instance.com"
 ```
@@ -82,7 +82,7 @@ GITLAB_URL="https://your-gitlab-instance.com"
 | `EXPORT_DIR` | Export directory | `gitlab_exports` |
 | `PROJECTS_LIST_FILE` | Projects list JSON file | `projects_list.json` |
 | `EXPORTED_PROJECTS_FILE` | Export log file | `exported_projects.log` |
-| `CONFIG_FILE` | YAML config file | `gitlab_export_config.yml` |
+| `CONFIG_FILE` | YAML configuration file | `gitlab_export_config.yml` |
 
 ### Usage
 
@@ -104,12 +104,12 @@ export GITLAB_TOKEN="glpat-your-token-here"
 
 ```bash
 # Run with custom timeout (default: 2 hours)
-timeout 14400 ./gitlab_export.sh  # 4 hours timeout
+timeout 14400 ./gitlab_export.sh  # 4 hour timeout
 
 # Run in background with logging
 nohup ./gitlab_export.sh > export.log 2>&1 &
 
-# Run with specific directory
+# Run with specified directory
 EXPORT_DIR="/backup/gitlab" ./gitlab_export.sh
 ```
 
@@ -133,7 +133,7 @@ EXPORT_DIR="/backup/gitlab" ./gitlab_export.sh
 
 - **`projects_list.json`**: Complete list of projects from GitLab API
 - **`exported_projects.log`**: Log file with export results and file sizes
-- **`gitlab_export_config.yml`**: Auto-generated YAML configuration
+- **`gitlab_export_config.yml`**: Automatically generated YAML configuration
 - **`gitlab_exports/`**: Directory containing individual project archives
 
 #### Archive Naming Convention
@@ -144,12 +144,12 @@ Example: `my-awesome-project-20250716_143022.tar.gz`
 
 ### Script Workflow
 
-1. **Dependency Check**: Verifies required tools are installed
-2. **Token Validation**: Tests GitLab API access
-3. **Project Discovery**: Fetches all accessible projects
-4. **Config Generation**: Creates YAML configuration file
-5. **Export Execution**: Runs gitlab-project-export tool
-6. **Results Summary**: Displays export statistics
+1. **Dependency check**: Verifies installation of required tools
+2. **Token validation**: Tests access to GitLab API
+3. **Project discovery**: Retrieves all available projects
+4. **Configuration generation**: Creates YAML configuration file
+5. **Export execution**: Runs gitlab-project-export tool
+6. **Results summary**: Displays export statistics
 
 ### Error Handling
 
@@ -157,9 +157,9 @@ Example: `my-awesome-project-20250716_143022.tar.gz`
 
 | Error | Cause | Solution |
 |-------|-------|----------|
-| `Authorization error (HTTP 401)` | Invalid token | Check token validity and scopes |
+| `Authorization error (HTTP 401)` | Invalid token | Check token validity and permissions |
 | `gitlab-project-export.py not found` | Tool not installed | Install via pip |
-| `Missing required utilities` | Dependencies missing | Install curl, jq, python3 |
+| `Missing required utilities` | Missing dependencies | Install curl, jq, python3 |
 | `Export error (code: 124)` | Timeout | Increase timeout or check network |
 | `No exported files found` | Export failed | Check logs and token permissions |
 
@@ -167,7 +167,7 @@ Example: `my-awesome-project-20250716_143022.tar.gz`
 
 Enable debug output by modifying the script:
 ```bash
-# Add at the beginning after set -e
+# Add after set -e
 set -x  # Enable debug mode
 ```
 
@@ -225,14 +225,14 @@ sudo systemctl start gitlab-backup.timer
 
 - **Network bandwidth**: Large repositories require significant bandwidth
 - **Disk space**: Ensure sufficient space for all project archives
-- **API rate limits**: GitLab may throttle API requests
-- **Timeout settings**: Adjust timeout for large projects
+- **API limitations**: GitLab may limit API requests
+- **Timeout settings**: Configure timeout for large projects
 
 #### Recommended Settings
 
 - **Small instance** (< 50 projects): Default settings work well
 - **Medium instance** (50-200 projects): Increase timeout to 4-6 hours
-- **Large instance** (200+ projects): Consider splitting exports by groups
+- **Large instance** (200+ projects): Consider splitting export by groups
 
 ### Security Notes
 
@@ -243,11 +243,11 @@ sudo systemctl start gitlab-backup.timer
 
 ### Troubleshooting
 
-#### Verbose Logging
+#### Detailed Logging
 
-Add verbose logging to the script:
+Add detailed logging to the script:
 ```bash
-# Enable detailed curl output
+# Enable verbose curl output
 curl -v -H "PRIVATE-TOKEN: $GITLAB_TOKEN" "$GITLAB_URL/api/v4/user"
 
 # Add debug prints
@@ -256,12 +256,12 @@ log_info "Debug: Processing project ID $project_id"
 
 #### Manual Testing
 
-Test individual components:
+Testing individual components:
 ```bash
 # Test API access
 curl -H "PRIVATE-TOKEN: your-token" "https://gitlab.com/api/v4/user"
 
-# Test project export manually
+# Manual project export test
 gitlab-project-export.py -c config.yml -d
 
 # Check project permissions
