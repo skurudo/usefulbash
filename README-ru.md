@@ -1,7 +1,7 @@
 # useful bash
 Useful bash-scripts and something like this
 
-**English version**: [README-en.md](README-en.md) | **Projects Overview**: [PROJECTS-OVERVIEW.md](PROJECTS-OVERVIEW.md)
+**🇷🇺 Русская версия** | **🇺🇸 English version**: [README-en.md](README-en.md)
 
 ## OS
 ### Initial softwate install and change 

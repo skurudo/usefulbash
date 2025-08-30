@@ -2,7 +2,7 @@
 
 A comprehensive collection of useful bash scripts for system administration, DevOps, and automation tasks.
 
-**Projects Overview**: [PROJECTS-OVERVIEW.md](PROJECTS-OVERVIEW.md)
+**🇺🇸 English version** | **🇷🇺 Русская версия**: [README-ru.md](README-ru.md)
 
 ## Table of Contents
 
